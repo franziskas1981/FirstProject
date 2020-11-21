@@ -7,13 +7,13 @@ public class Hello {
         LocalDate current = LocalDate.now(); //get current Date
         LocalTime time = LocalTime.now(); // get current Time
         Scanner input = new Scanner(System.in);
-        Person helloworld = new Person();
+        Person person = new Person();
         Greeting greetz = new Greeting();
 
-        System.out.println("What is your name?");
-        String name = input.next();
-        helloworld.setName(name);
-        greetz.calcGreeting();
-        System.out.println("Hello "+helloworld.getName()+"! "+greetz.getGreeting()+" Today is "+current+ " and it's currently " +time); // print line with greeting, current Date and current time
+        System.out.println("What is your name?"); // ask user for name
+        String name = input.nextLine(); // read name
+        person.setName(name); // set name of user
+        greetz.calcGreeting(time.getHour()); // choose Greeting based on Time of Day
+        System.out.println("Hello "+person.getName()+"! "+greetz.getGreeting()+" Today is "+current+ " and it's currently " +time); // print line with greeting, current Date and current time
     }
 }
