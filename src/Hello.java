@@ -1,21 +1,19 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Scanner;
 
 public class Hello {
     public static void main(String[] args) {
         LocalDate current = LocalDate.now(); //get current Date
         LocalTime time = LocalTime.now(); // get current Time
-        String greeting; // initialise string to add greeting
-        int hour = time.getHour(); // get the hour of the current time
+        Scanner input = new Scanner(System.in);
+        Person helloworld = new Person();
+        Greeting greetz = new Greeting();
 
-        if (hour >= 12 && hour <= 18) {  // if it's after noon, but before 6pm, greeting is "Good Afternoon"
-            greeting = "Good Afternoon!";
-        } else if (hour >=18) {
-            greeting = "Good Evening!"; // after 6pm greeting is "Good Evening"
-        }
-        else {
-            greeting = "Good Morning!"; // else greeting is "Good Morning"
-        }
-        System.out.println("Hello World! "+greeting+" Today is "+current+ " and it's currently " +time); // print line with greeting, current Date and current time
+        System.out.println("What is your name?");
+        String name = input.next();
+        helloworld.setName(name);
+        greetz.calcGreeting();
+        System.out.println("Hello "+helloworld.getName()+"! "+greetz.getGreeting()+" Today is "+current+ " and it's currently " +time); // print line with greeting, current Date and current time
     }
 }
