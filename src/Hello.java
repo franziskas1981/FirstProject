@@ -19,7 +19,7 @@ public class Hello {
         System.out.println(greetz.getGreeting() + person.getName()+"! When were you born? (yyyy/mm/dd)");
         String userbd = input.nextLine();  //read birthdate
         LocalDate bd = LocalDate.parse(userbd, d); // parse input date to dateformat
-        person.calcAge(bd, current);  // call calculate Age method
+        person.setBirthdate(bd);
         System.out.println("You are "+person.getAge()+ " years old today!");
     }
 }

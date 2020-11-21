@@ -4,6 +4,7 @@ import java.time.Period;
 public class Person {
     private String name;
     private int age;
+    private LocalDate birthdate;
 
     public String getName(){
         return this.name;
@@ -19,6 +20,15 @@ public class Person {
 
     public void setAge(int a){
         this.age = a;
+    }
+
+    public void setBirthdate(LocalDate d){
+        this.birthdate = d;
+        calcAge(d, LocalDate.now());
+    }
+
+    public LocalDate getBirthdate(){
+        return this.birthdate;
     }
 
     public void calcAge(LocalDate bd, LocalDate currentDate){
